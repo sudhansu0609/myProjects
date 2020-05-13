@@ -4,13 +4,13 @@ Library           AppiumLibrary
 Library           JSONLibrary
 Library           OperatingSystem
 Library           String
-Library           DynamicXpath     
+# Library           DynamicXpath     
 Library            Collections
 Library           pabot.pabotlib
-Library           headspinPythonLib 
+# Library           headspinPythonLib 
 Resource          Config_Data_Driver.robot
 Resource          Object_Repo_Driver.robot
-Resource          commonKeywords.robot
+# Resource          commonKeywords.robot
 
 *** Variables ***
 
@@ -18,10 +18,10 @@ Resource          commonKeywords.robot
 test youtube on headspin
     [Arguments]   ${Device}
   #Set Log Level    None
-    ${username}   common get username
-    ${password}   common get password
-    log to console   username is ${username}
-    log to console   password is ${password}
+    # ${username}   common get username
+    # ${password}   common get password
+    # log to console   username is ${username}
+    # log to console   password is ${password}
 
     ${capabilities_temp}    Get File    ${capability_File_Youtube_${Device}}
     ${capabilitiesFinal}    Convert String to JSON    ${capabilities_temp}
@@ -36,14 +36,14 @@ test youtube on headspin
     Open Application        ${headspinUrl${DEVICE}}    platformName=${platformName}    deviceName=${deviceName}    appPackage=${appPackage}    automationName=${automationName}    appActivity=${appActivity}
     ...    udid=${udid}  
     sleep  2s    
-    log to console  getting library instance
-    ${AppiumLibInstance}=    Get Library Instance  AppiumLibrary  
+    # log to console  getting library instance
+    # ${AppiumLibInstance}=    Get Library Instance  AppiumLibrary  
     
-    log to console  instance is ${AppiumLibInstance}
-    ${driver2}=   Get Webdriver   ${AppiumLibInstance}
-     log to console  driver2 is ${driver2}
+    # log to console  instance is ${AppiumLibInstance}
+    # ${driver2}=   Get Webdriver   ${AppiumLibInstance}
+     # log to console  driver2 is ${driver2}
    #  DynamicXpath.Get Web Elements   ${driver2}  0
-    log to console   webscraping done
+    # log to console   webscraping done
     ${CheckPremium1}   Run Keyword And return status   Wait Until Element Is Visible    ${noThanksOption1}   2s
     Run Keyword And Return If    '${CheckPremium1} '=='True'    Click Element    ${noThanksOption2}
 
@@ -84,7 +84,7 @@ test youtube on headspin
 
     #Release Value Set
 check Ad and Skip
-    ${ad}   Run Keyword And Return Status    Wait Until Element Is Visible    ${countdownText}     1s
+    ${ad}   Run Keyword And Return Status    Wait Until Element Is Visible    ${countdownText}     2s
     log to console           checked if add is present
    # sleep   5s   
     Run Keyword If   '${ad}'=='True'  Wait Until Keyword Succeeds   2x  1   Click Element  	         ${adSkipElement}
