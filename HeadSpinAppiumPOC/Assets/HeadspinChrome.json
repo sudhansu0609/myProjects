@@ -1,0 +1,10 @@
+{
+    "deviceName": "4cb02cfb",
+    "autoAcceptAlerts": "true",
+    "udid": "4cb02cfb",
+    "appPackage": "com.android.chrome",
+    "automationName": "UiAutomator1",
+    "platformName": "Android",
+    "appActivity": "com.google.android.apps.chrome.Main",
+    "headspin.controlLock": "true"
+}

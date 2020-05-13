@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="DynamicXpath" type="library" format="ROBOT" generated="20200505 18:22:46">
+<version></version>
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``DynamicXpath``.</doc>
+<kw name="Get Web Elements">
+<arguments>
+<arg>browser</arg>
+<arg>ctr</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Make Attribute Col">
+<arguments>
+<arg>x</arg>
+<arg>attribute</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Scrap Existing Item">
+<arguments>
+<arg>innerText</arg>
+<arg>ctr</arg>
+<arg>cleaned_df1</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Scrap New Item">
+<arguments>
+<arg>webelement</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Write Test File">
+<arguments>
+<arg>text</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

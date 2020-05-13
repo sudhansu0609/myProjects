@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="pabot.pabotlib" type="library" format="ROBOT" generated="20200504 15:43:06">
+<version>0.67</version>
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``pabot.pabotlib``.</doc>
+<kw name="Acquire Lock">
+<arguments>
+<arg>name</arg>
+</arguments>
+<doc>Wait for a lock with name.
+[https://pabot.org/PabotLib.html?ref=log#acquire-lock|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Acquire Value Set">
+<arguments>
+<arg>*tags</arg>
+</arguments>
+<doc>Reserve a set of values for this execution.
+[https://pabot.org/PabotLib.html?ref=log#acquire-value-set|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Disable Value Set">
+<arguments>
+</arguments>
+<doc>Disable a reserved value set.
+[https://pabot.org/PabotLib.html?ref=log#disable-value-set|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Parallel Value For Key">
+<arguments>
+<arg>key</arg>
+</arguments>
+<doc>Get the value for a key. If there is no value for the key then empty
+string is returned.
+[https://pabot.org/PabotLib.html?ref=log#get-parallel-value-for-key|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Value From Set">
+<arguments>
+<arg>key</arg>
+</arguments>
+<doc>Get a value from previously reserved value set.
+[https://pabot.org/PabotLib.html?ref=log#get-value-from-set|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Import Shared Library">
+<arguments>
+<arg>name</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Release Lock">
+<arguments>
+<arg>name</arg>
+</arguments>
+<doc>Release a lock with name.
+[https://pabot.org/PabotLib.html?ref=log#release-lock|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Release Locks">
+<arguments>
+</arguments>
+<doc>Release all locks called by instance.
+[https://pabot.org/PabotLib.html?ref=log#release-locks|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Release Value Set">
+<arguments>
+</arguments>
+<doc>Release a reserved value set so that other executions can use it also.
+[https://pabot.org/PabotLib.html?ref=log#release-value-set|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Run On Last Process">
+<arguments>
+<arg>keyword</arg>
+</arguments>
+<doc>Runs a keyword only on last process used by pabot.
+[https://pabot.org/PabotLib.html?ref=log#run-on-last-process|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Run Only Once">
+<arguments>
+<arg>keyword</arg>
+</arguments>
+<doc>Runs a keyword only once in one of the parallel processes.
+[https://pabot.org/PabotLib.html?ref=log#run-only-once|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Run Setup Only Once">
+<arguments>
+<arg>keyword</arg>
+<arg>*args</arg>
+</arguments>
+<doc>Runs a keyword only once at the first possible moment when
+an execution has gone through this step.
+[https://pabot.org/PabotLib.html?ref=log#run-setup-only-once|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Run Teardown Only Once">
+<arguments>
+<arg>keyword</arg>
+<arg>*args</arg>
+</arguments>
+<doc>Runs a keyword only once after all executions have gone throught this step in the last possible moment.
+[https://pabot.org/PabotLib.html?ref=log#run-teardown-only-once|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Set Parallel Value For Key">
+<arguments>
+<arg>key</arg>
+<arg>value</arg>
+</arguments>
+<doc>Set a globally available key and value that can be accessed
+from all the pabot processes.
+[https://pabot.org/PabotLib.html?ref=log#set-parallel-value-for-key|Open online docs.]</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Stop Remote Libraries">
+<arguments>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

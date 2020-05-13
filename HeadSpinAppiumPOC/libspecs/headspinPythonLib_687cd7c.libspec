@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="headspinPythonLib" type="library" format="ROBOT" generated="20200504 15:43:25">
+<version>1.0</version>
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``headspinPythonLib``.</doc>
+<kw name="Get Webdriver">
+<arguments>
+<arg>libraryInstance</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

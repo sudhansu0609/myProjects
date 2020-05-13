@@ -1,0 +1,10 @@
+{
+    "deviceName": "CQ3001SM53",
+    "autoAcceptAlerts": "true",
+    "udid": "CQ3001SM53",
+    "appPackage": "com.android.settings",
+    "automationName": "UiAutomator1",
+    "platformName": "Android",
+    "appActivity": "com.android.settings.Settings",
+    "headspin.controlLock": "true"
+}

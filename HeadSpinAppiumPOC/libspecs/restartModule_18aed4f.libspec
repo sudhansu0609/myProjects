@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="restartModule" type="library" format="ROBOT" generated="20200504 16:00:53">
+<version></version>
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>classdocs</doc>
+<kw name="Attach Browser New">
+<arguments>
+<arg>url</arg>
+<arg>session_id</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Find Replace">
+<arguments>
+<arg>file</arg>
+<arg>old</arg>
+<arg>new</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Open Url">
+<arguments>
+<arg>txt</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Return Driver Props">
+<arguments>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Set Driver Session Id">
+<arguments>
+<arg>sesion_id</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

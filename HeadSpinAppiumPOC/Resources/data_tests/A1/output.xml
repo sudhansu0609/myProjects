@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.5 on win32)" generated="20200423 19:04:16.640" rpa="false">
+<suite id="s1" name="Driver Appium Trial" source="C:\robot_framework\HeadSpinAppiumPOC\TestSuite\Driver_Appium_Trial.robot">
+<test id="s1-t1" name="Headspin testing of youtube">
+<kw name="test youtube on headspin" library="Appium_resource">
+<arguments>
+<arg>${DeviceArg}</arg>
+</arguments>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${capability_File_Youtube_${Device}}</arg>
+</arguments>
+<assign>
+<var>${capabilities_temp}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.049" level="INFO" html="yes">Getting file '&lt;a href="file://C:\robot_framework\HeadSpinAppiumPOC\Assets\capabilityYoutubeHeadspinA1.json"&gt;C:\robot_framework\HeadSpinAppiumPOC\Assets\capabilityYoutubeHeadspinA1.json&lt;/a&gt;'.</msg>
+<msg timestamp="20200423 19:04:20.052" level="INFO">${capabilities_temp} = {
+    "deviceName": "33874a380704",
+    "autoAcceptAlerts": "true",
+    "udid": "33874a380704",
+    "appPackage": "com.google.android.youtube",
+    "automationName": "UiAutomator1",
+    "platformName"...</msg>
+<status status="PASS" starttime="20200423 19:04:20.049" endtime="20200423 19:04:20.052"></status>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<doc>Convert String to JSON object</doc>
+<arguments>
+<arg>${capabilities_temp}</arg>
+</arguments>
+<assign>
+<var>${capabilitiesFinal}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.053" level="INFO">${capabilitiesFinal} = {'deviceName': '33874a380704', 'autoAcceptAlerts': 'true', 'udid': '33874a380704', 'appPackage': 'com.google.android.youtube', 'automationName': 'UiAutomator1', 'platformName': 'Android', 'appActivity...</msg>
+<status status="PASS" starttime="20200423 19:04:20.053" endtime="20200423 19:04:20.053"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[deviceName]</arg>
+</arguments>
+<assign>
+<var>${deviceName}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.054" level="INFO">${deviceName} = 33874a380704</msg>
+<status status="PASS" starttime="20200423 19:04:20.053" endtime="20200423 19:04:20.054"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[platformName]</arg>
+</arguments>
+<assign>
+<var>${platformName}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.054" level="INFO">${platformName} = Android</msg>
+<status status="PASS" starttime="20200423 19:04:20.054" endtime="20200423 19:04:20.054"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[appPackage]</arg>
+</arguments>
+<assign>
+<var>${appPackage}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.055" level="INFO">${appPackage} = com.google.android.youtube</msg>
+<status status="PASS" starttime="20200423 19:04:20.055" endtime="20200423 19:04:20.055"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[automationName]</arg>
+</arguments>
+<assign>
+<var>${automationName}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.057" level="INFO">${automationName} = UiAutomator1</msg>
+<status status="PASS" starttime="20200423 19:04:20.056" endtime="20200423 19:04:20.057"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[appActivity]</arg>
+</arguments>
+<assign>
+<var>${appActivity}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.058" level="INFO">${appActivity} = com.google.android.apps.youtube.app.application.Shell$HomeActivity</msg>
+<status status="PASS" starttime="20200423 19:04:20.057" endtime="20200423 19:04:20.058"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[udid]</arg>
+</arguments>
+<assign>
+<var>${udid}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.059" level="INFO">${udid} = 33874a380704</msg>
+<status status="PASS" starttime="20200423 19:04:20.058" endtime="20200423 19:04:20.059"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${headspinUrl${Device}}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>automationName=${automationName}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>udid=${udid}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:20.059" endtime="20200423 19:04:36.367"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200423 19:04:38.369" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200423 19:04:36.367" endtime="20200423 19:04:38.369"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//android.widget.TextView[contains(@text,'No Thanks')]</arg>
+<arg>2s</arg>
+</arguments>
+<assign>
+<var>${CheckPremium1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.TextView[contains(@text,'No Thanks')]</arg>
+<arg>2s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 19:04:43.729" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 19:04:41.367" endtime="20200423 19:04:43.729"></status>
+</kw>
+<msg timestamp="20200423 19:04:43.731" level="FAIL">Element locator 'xpath=//android.widget.TextView[contains(@text,'No Thanks')]' did not match any elements after 2 seconds</msg>
+<status status="FAIL" starttime="20200423 19:04:38.370" endtime="20200423 19:04:43.731"></status>
+</kw>
+<msg timestamp="20200423 19:04:43.731" level="INFO">${CheckPremium1} = False</msg>
+<status status="PASS" starttime="20200423 19:04:38.369" endtime="20200423 19:04:43.731"></status>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>'${CheckPremium1} '=='True'</arg>
+<arg>Click Element</arg>
+<arg>xpath=xpath=//*[contains(@text,'No Thanks')]</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:43.732" endtime="20200423 19:04:43.732"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=Search</arg>
+</arguments>
+<msg timestamp="20200423 19:04:43.735" level="INFO">Clicking element 'accessibility_id=Search'.</msg>
+<status status="PASS" starttime="20200423 19:04:43.732" endtime="20200423 19:04:44.798"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200423 19:04:47.801" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200423 19:04:44.799" endtime="20200423 19:04:47.801"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=com.google.android.youtube:id/search_edit_text</arg>
+<arg>ghost stories</arg>
+</arguments>
+<msg timestamp="20200423 19:04:47.805" level="INFO">Typing text 'ghost stories' into text field 'id=com.google.android.youtube:id/search_edit_text'</msg>
+<status status="PASS" starttime="20200423 19:04:47.801" endtime="20200423 19:04:53.410"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>66</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:53.410" endtime="20200423 19:04:53.987"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=(//android.view.ViewGroup[contains(@content-desc,'Ghost')])[1]</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:53.987" endtime="20200423 19:04:55.783"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//android.view.ViewGroup[contains(@content-desc,'Ghost')])[1]</arg>
+</arguments>
+<msg timestamp="20200423 19:04:55.785" level="INFO">Clicking element 'xpath=(//android.view.ViewGroup[contains(@content-desc,'Ghost')])[1]'.</msg>
+<status status="PASS" starttime="20200423 19:04:55.783" endtime="20200423 19:04:56.187"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="check Ad and Skip" library="Appium_resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@resource-id,'countdown_text')]</arg>
+<arg>1s</arg>
+</arguments>
+<assign>
+<var>${ad}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'countdown_text')]</arg>
+<arg>1s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 19:04:59.883" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 19:04:57.603" endtime="20200423 19:04:59.884"></status>
+</kw>
+<msg timestamp="20200423 19:04:59.886" level="FAIL">Element locator '//android.widget.TextView[contains(@resource-id,'countdown_text')]' did not match any elements after 1 second</msg>
+<status status="FAIL" starttime="20200423 19:04:56.189" endtime="20200423 19:04:59.886"></status>
+</kw>
+<msg timestamp="20200423 19:04:59.886" level="INFO">${ad} = False</msg>
+<status status="PASS" starttime="20200423 19:04:56.188" endtime="20200423 19:04:59.886"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>checked if add is present</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:59.886" endtime="20200423 19:04:59.887"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${ad}'=='True'</arg>
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>2x</arg>
+<arg>1</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[contains(@resource-id,'skip')]</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:59.887" endtime="20200423 19:04:59.888"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:04:56.187" endtime="20200423 19:04:59.888"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:04:56.187" endtime="20200423 19:04:59.888"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:04:56.187" endtime="20200423 19:04:59.889"></status>
+</kw>
+<kw name="Click Element At Coordinates" library="AppiumLibrary">
+<doc>click element at a certain coordinate</doc>
+<arguments>
+<arg>550</arg>
+<arg>250</arg>
+</arguments>
+<msg timestamp="20200423 19:04:59.892" level="INFO">Pressing at (550, 250).</msg>
+<status status="PASS" starttime="20200423 19:04:59.889" endtime="20200423 19:05:00.123"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>clicked on screen</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:00.123" endtime="20200423 19:05:00.123"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=Pause video</arg>
+</arguments>
+<msg timestamp="20200423 19:05:00.125" level="INFO">Clicking element 'accessibility_id=Pause video'.</msg>
+<status status="PASS" starttime="20200423 19:05:00.124" endtime="20200423 19:05:01.121"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3x</arg>
+<arg>3</arg>
+<arg>check video is playing</arg>
+</arguments>
+<kw name="check video is playing" library="Appium_resource">
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]</arg>
+<arg>text</arg>
+</arguments>
+<assign>
+<var>${currentTime}</var>
+</assign>
+<msg timestamp="20200423 19:05:01.800" level="INFO">Element '//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]' attribute 'text' value '2:02' </msg>
+<msg timestamp="20200423 19:05:01.800" level="INFO">${currentTime} = 2:02</msg>
+<status status="PASS" starttime="20200423 19:05:01.123" endtime="20200423 19:05:01.800"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${currentTime}</arg>
+<arg>:</arg>
+</arguments>
+<assign>
+<var>@{timeList}</var>
+</assign>
+<msg timestamp="20200423 19:05:01.801" level="INFO">@{timeList} = [ 2 | 02 ]</msg>
+<status status="PASS" starttime="20200423 19:05:01.801" endtime="20200423 19:05:01.802"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>@{timeList}[1]</arg>
+</arguments>
+<assign>
+<var>${timeInSeconds}</var>
+</assign>
+<msg timestamp="20200423 19:05:01.803" level="INFO">${timeInSeconds} = 02</msg>
+<status status="PASS" starttime="20200423 19:05:01.802" endtime="20200423 19:05:01.803"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be Equal As Strings</arg>
+<arg>00</arg>
+<arg>${timeInSeconds}</arg>
+</arguments>
+<assign>
+<var>${NotplayingStatus}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>00</arg>
+<arg>${timeInSeconds}</arg>
+</arguments>
+<msg timestamp="20200423 19:05:01.804" level="FAIL">00 != 02</msg>
+<status status="FAIL" starttime="20200423 19:05:01.804" endtime="20200423 19:05:01.804"></status>
+</kw>
+<msg timestamp="20200423 19:05:01.805" level="INFO">${NotplayingStatus} = False</msg>
+<status status="PASS" starttime="20200423 19:05:01.803" endtime="20200423 19:05:01.805"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${NotplayingStatus}'=='True'</arg>
+<arg>Fail</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:01.806" endtime="20200423 19:05:01.806"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>video is playing</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:01.807" endtime="20200423 19:05:01.807"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:05:01.122" endtime="20200423 19:05:01.808"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:05:01.122" endtime="20200423 19:05:01.808"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200423 19:05:04.810" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200423 19:05:01.808" endtime="20200423 19:05:04.810"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20200423 19:05:05.311" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20200423 19:05:04.810" endtime="20200423 19:05:05.311"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//android.widget.ImageView[contains(@content-desc,'options')]</arg>
+</arguments>
+<msg timestamp="20200423 19:05:05.315" level="INFO">Clicking element '//android.widget.ImageView[contains(@content-desc,'options')]'.</msg>
+<status status="PASS" starttime="20200423 19:05:05.311" endtime="20200423 19:05:05.975"></status>
+</kw>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'Quality')]/following-sibling::android.widget.TextView[@instance='3']</arg>
+<arg>text</arg>
+</arguments>
+<assign>
+<var>${resolution}</var>
+</assign>
+<msg timestamp="20200423 19:05:06.632" level="INFO">Element '//android.widget.TextView[contains(@text,'Quality')]/following-sibling::android.widget.TextView[@instance='3']' attribute 'text' value 'Auto (360p)' </msg>
+<msg timestamp="20200423 19:05:06.633" level="INFO">${resolution} = Auto (360p)</msg>
+<status status="PASS" starttime="20200423 19:05:05.975" endtime="20200423 19:05:06.633"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>resolution is ${resolution}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:06.633" endtime="20200423 19:05:06.634"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>resolution is ${resolution}</arg>
+</arguments>
+<msg timestamp="20200423 19:05:06.635" level="INFO">resolution is Auto (360p)</msg>
+<status status="PASS" starttime="20200423 19:05:06.635" endtime="20200423 19:05:06.635"></status>
+</kw>
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@text,'Playback speed')]/following-sibling::android.widget.TextView[@index='3']</arg>
+<arg>text</arg>
+</arguments>
+<assign>
+<var>${playbackSpeed}</var>
+</assign>
+<msg timestamp="20200423 19:05:06.839" level="INFO">Element '//android.widget.TextView[contains(@text,'Playback speed')]/following-sibling::android.widget.TextView[@index='3']' attribute 'text' value 'Normal' </msg>
+<msg timestamp="20200423 19:05:06.840" level="INFO">${playbackSpeed} = Normal</msg>
+<status status="PASS" starttime="20200423 19:05:06.636" endtime="20200423 19:05:06.840"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>playback speed is ${playbackSpeed}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:06.840" endtime="20200423 19:05:06.840"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>playback speed is ${playbackSpeed}</arg>
+</arguments>
+<msg timestamp="20200423 19:05:06.841" level="INFO">playback speed is Normal</msg>
+<status status="PASS" starttime="20200423 19:05:06.840" endtime="20200423 19:05:06.841"></status>
+</kw>
+<kw name="Click Element At Coordinates" library="AppiumLibrary">
+<doc>click element at a certain coordinate</doc>
+<arguments>
+<arg>550</arg>
+<arg>250</arg>
+</arguments>
+<msg timestamp="20200423 19:05:06.843" level="INFO">Pressing at (550, 250).</msg>
+<status status="PASS" starttime="20200423 19:05:06.841" endtime="20200423 19:05:07.035"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=Play video</arg>
+</arguments>
+<msg timestamp="20200423 19:05:07.038" level="INFO">Clicking element 'accessibility_id=Play video'.</msg>
+<status status="PASS" starttime="20200423 19:05:07.035" endtime="20200423 19:05:07.895"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:04:20.048" endtime="20200423 19:05:07.895"></status>
+</kw>
+<tags>
+<tag>Android</tag>
+</tags>
+<status status="PASS" starttime="20200423 19:04:20.047" endtime="20200423 19:05:07.896" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200423 19:04:16.648" endtime="20200423 19:05:07.897"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Android</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Driver Appium Trial">Driver Appium Trial</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

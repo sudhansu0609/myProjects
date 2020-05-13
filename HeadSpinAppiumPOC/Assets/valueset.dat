@@ -1,0 +1,32 @@
+    [Server1]
+    tags=Android
+	deviceName= 4cb02cfb
+	autoAcceptAlerts= true
+	udid= 4cb02cfb
+	appPackage= com.google.android.youtube
+	automationName= UiAutomator1
+	platformName= Android
+	appActivity= com.google.android.apps.youtube.app.application.Shell$HomeActivity
+	headspin.controlLock= true
+  
+    [Server2]
+    tags=Android
+    deviceName= 33874a380704
+    autoAcceptAlerts= true
+    udid= 33874a380704
+    appPackage= com.google.android.youtube
+    automationName= UiAutomator1
+    platformName= Android
+    appActivity= com.google.android.apps.youtube.app.application.Shell$HomeActivity
+    headspin.controlLock= true
+    
+    [Server2]
+    tags=Android
+    deviceName= 33874a380704
+    autoAcceptAlerts= true
+    udid= 33874a380704
+    appPackage= com.google.android.youtube
+    automationName= UiAutomator1
+    platformName= Android
+    appActivity= com.google.android.apps.youtube.app.application.Shell$HomeActivity
+    headspin.controlLock= true

@@ -1,0 +1,10 @@
+{
+    "deviceName": "in-bng.headspin.io:7726",
+    "autoAcceptAlerts": "true",
+    "udid": "in-bng.headspin.io:7726",
+    "appPackage": "com.google.android.youtube",
+    "automationName": "UiAutomator1",
+    "platformName": "Android",
+    "appActivity": "com.google.android.apps.youtube.app.application.Shell$HomeActivity",
+    "headspin.controlLock": "true"
+}

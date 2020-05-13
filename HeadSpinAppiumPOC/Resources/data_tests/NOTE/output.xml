@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.5 on win32)" generated="20200423 19:04:16.770" rpa="false">
+<suite id="s1" name="Driver Appium Trial" source="C:\robot_framework\HeadSpinAppiumPOC\TestSuite\Driver_Appium_Trial.robot">
+<test id="s1-t1" name="Headspin testing of youtube">
+<kw name="test youtube on headspin" library="Appium_resource">
+<arguments>
+<arg>${DeviceArg}</arg>
+</arguments>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${capability_File_Youtube_${Device}}</arg>
+</arguments>
+<assign>
+<var>${capabilities_temp}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.028" level="INFO" html="yes">Getting file '&lt;a href="file://C:\robot_framework\HeadSpinAppiumPOC\Assets\capabilityYoutubeHeadspinNOTE.json"&gt;C:\robot_framework\HeadSpinAppiumPOC\Assets\capabilityYoutubeHeadspinNOTE.json&lt;/a&gt;'.</msg>
+<msg timestamp="20200423 19:04:20.031" level="INFO">${capabilities_temp} = {
+    "deviceName": "4cb02cfb",
+    "autoAcceptAlerts": "true",
+    "udid": "4cb02cfb",
+    "appPackage": "com.google.android.youtube",
+    "automationName": "UiAutomator1",
+    "platformName": "Andro...</msg>
+<status status="PASS" starttime="20200423 19:04:20.027" endtime="20200423 19:04:20.031"></status>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<doc>Convert String to JSON object</doc>
+<arguments>
+<arg>${capabilities_temp}</arg>
+</arguments>
+<assign>
+<var>${capabilitiesFinal}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.032" level="INFO">${capabilitiesFinal} = {'deviceName': '4cb02cfb', 'autoAcceptAlerts': 'true', 'udid': '4cb02cfb', 'appPackage': 'com.google.android.youtube', 'automationName': 'UiAutomator1', 'platformName': 'Android', 'appActivity': 'com....</msg>
+<status status="PASS" starttime="20200423 19:04:20.032" endtime="20200423 19:04:20.032"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[deviceName]</arg>
+</arguments>
+<assign>
+<var>${deviceName}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.033" level="INFO">${deviceName} = 4cb02cfb</msg>
+<status status="PASS" starttime="20200423 19:04:20.033" endtime="20200423 19:04:20.033"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[platformName]</arg>
+</arguments>
+<assign>
+<var>${platformName}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.035" level="INFO">${platformName} = Android</msg>
+<status status="PASS" starttime="20200423 19:04:20.034" endtime="20200423 19:04:20.035"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[appPackage]</arg>
+</arguments>
+<assign>
+<var>${appPackage}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.037" level="INFO">${appPackage} = com.google.android.youtube</msg>
+<status status="PASS" starttime="20200423 19:04:20.036" endtime="20200423 19:04:20.037"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[automationName]</arg>
+</arguments>
+<assign>
+<var>${automationName}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.039" level="INFO">${automationName} = UiAutomator1</msg>
+<status status="PASS" starttime="20200423 19:04:20.037" endtime="20200423 19:04:20.039"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[appActivity]</arg>
+</arguments>
+<assign>
+<var>${appActivity}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.041" level="INFO">${appActivity} = com.google.android.apps.youtube.app.application.Shell$HomeActivity</msg>
+<status status="PASS" starttime="20200423 19:04:20.040" endtime="20200423 19:04:20.041"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[udid]</arg>
+</arguments>
+<assign>
+<var>${udid}</var>
+</assign>
+<msg timestamp="20200423 19:04:20.042" level="INFO">${udid} = 4cb02cfb</msg>
+<status status="PASS" starttime="20200423 19:04:20.041" endtime="20200423 19:04:20.042"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${headspinUrl${Device}}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>automationName=${automationName}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>udid=${udid}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:20.042" endtime="20200423 19:04:38.297"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200423 19:04:40.298" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200423 19:04:38.297" endtime="20200423 19:04:40.298"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//android.widget.TextView[contains(@text,'No Thanks')]</arg>
+<arg>2s</arg>
+</arguments>
+<assign>
+<var>${CheckPremium1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.TextView[contains(@text,'No Thanks')]</arg>
+<arg>2s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 19:04:45.767" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 19:04:43.139" endtime="20200423 19:04:45.767"></status>
+</kw>
+<msg timestamp="20200423 19:04:45.769" level="FAIL">Element locator 'xpath=//android.widget.TextView[contains(@text,'No Thanks')]' did not match any elements after 2 seconds</msg>
+<status status="FAIL" starttime="20200423 19:04:40.298" endtime="20200423 19:04:45.770"></status>
+</kw>
+<msg timestamp="20200423 19:04:45.770" level="INFO">${CheckPremium1} = False</msg>
+<status status="PASS" starttime="20200423 19:04:40.298" endtime="20200423 19:04:45.770"></status>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>'${CheckPremium1} '=='True'</arg>
+<arg>Click Element</arg>
+<arg>xpath=xpath=//*[contains(@text,'No Thanks')]</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:45.771" endtime="20200423 19:04:45.771"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=Search</arg>
+</arguments>
+<msg timestamp="20200423 19:04:45.775" level="INFO">Clicking element 'accessibility_id=Search'.</msg>
+<status status="PASS" starttime="20200423 19:04:45.772" endtime="20200423 19:04:46.237"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200423 19:04:49.239" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200423 19:04:46.238" endtime="20200423 19:04:49.239"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=com.google.android.youtube:id/search_edit_text</arg>
+<arg>ghost stories</arg>
+</arguments>
+<msg timestamp="20200423 19:04:49.244" level="INFO">Typing text 'ghost stories' into text field 'id=com.google.android.youtube:id/search_edit_text'</msg>
+<status status="PASS" starttime="20200423 19:04:49.239" endtime="20200423 19:04:55.407"></status>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<doc>Sends a press of keycode to the device.</doc>
+<arguments>
+<arg>66</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:55.408" endtime="20200423 19:04:56.576"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=(//android.view.ViewGroup[contains(@content-desc,'Ghost')])[1]</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:04:56.576" endtime="20200423 19:04:58.457"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//android.view.ViewGroup[contains(@content-desc,'Ghost')])[1]</arg>
+</arguments>
+<msg timestamp="20200423 19:04:58.462" level="INFO">Clicking element 'xpath=(//android.view.ViewGroup[contains(@content-desc,'Ghost')])[1]'.</msg>
+<status status="PASS" starttime="20200423 19:04:58.458" endtime="20200423 19:04:58.918"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="check Ad and Skip" library="Appium_resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>//android.widget.TextView[contains(@resource-id,'countdown_text')]</arg>
+<arg>1s</arg>
+</arguments>
+<assign>
+<var>${ad}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'countdown_text')]</arg>
+<arg>1s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 19:05:01.706" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 19:05:00.295" endtime="20200423 19:05:01.706"></status>
+</kw>
+<msg timestamp="20200423 19:05:01.709" level="FAIL">Element locator '//android.widget.TextView[contains(@resource-id,'countdown_text')]' did not match any elements after 1 second</msg>
+<status status="FAIL" starttime="20200423 19:04:58.922" endtime="20200423 19:05:01.709"></status>
+</kw>
+<msg timestamp="20200423 19:05:01.709" level="INFO">${ad} = False</msg>
+<status status="PASS" starttime="20200423 19:04:58.921" endtime="20200423 19:05:01.709"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>checked if add is present</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:01.710" endtime="20200423 19:05:01.710"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${ad}'=='True'</arg>
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>2x</arg>
+<arg>1</arg>
+<arg>Click Element</arg>
+<arg>//android.widget.TextView[contains(@resource-id,'skip')]</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:01.711" endtime="20200423 19:05:01.711"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:04:58.920" endtime="20200423 19:05:01.712"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:04:58.920" endtime="20200423 19:05:01.712"></status>
+</kw>
+<status status="PASS" starttime="20200423 19:04:58.919" endtime="20200423 19:05:01.712"></status>
+</kw>
+<kw name="Click Element At Coordinates" library="AppiumLibrary">
+<doc>click element at a certain coordinate</doc>
+<arguments>
+<arg>550</arg>
+<arg>250</arg>
+</arguments>
+<msg timestamp="20200423 19:05:01.715" level="INFO">Pressing at (550, 250).</msg>
+<status status="PASS" starttime="20200423 19:05:01.713" endtime="20200423 19:05:01.970"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>clicked on screen</arg>
+</arguments>
+<status status="PASS" starttime="20200423 19:05:01.971" endtime="20200423 19:05:01.971"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=Pause video</arg>
+</arguments>
+<msg timestamp="20200423 19:05:01.975" level="INFO">Clicking element 'accessibility_id=Pause video'.</msg>
+<status status="PASS" starttime="20200423 19:05:01.971" endtime="20200423 19:05:02.321"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3x</arg>
+<arg>3</arg>
+<arg>check video is playing</arg>
+</arguments>
+<kw name="check video is playing" library="Appium_resource">
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]</arg>
+<arg>text</arg>
+</arguments>
+<assign>
+<var>${currentTime}</var>
+</assign>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 19:05:04.289" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 19:05:02.712" endtime="20200423 19:05:04.289"></status>
+</kw>
+<msg timestamp="20200423 19:05:04.292" level="FAIL">ValueError: Element locator '//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]' did not match any elements.</msg>
+<status status="FAIL" starttime="20200423 19:05:02.323" endtime="20200423 19:05:04.292"></status>
+</kw>
+<status status="FAIL" starttime="20200423 19:05:02.322" endtime="20200423 19:05:04.292"></status>
+</kw>
+<kw name="check video is playing" library="Appium_resource">
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]</arg>
+<arg>text</arg>
+</arguments>
+<assign>
+<var>${currentTime}</var>
+</assign>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 19:05:09.548" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 19:05:07.651" endtime="20200423 19:05:09.548"></status>
+</kw>
+<msg timestamp="20200423 19:05:09.550" level="FAIL">ValueError: Element locator '//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]' did not match any elements.</msg>
+<status status="FAIL" starttime="20200423 19:05:07.295" endtime="20200423 19:05:09.550"></status>
+</kw>
+<status status="FAIL" starttime="20200423 19:05:07.294" endtime="20200423 19:05:09.551"></status>
+</kw>
+<kw name="check video is playing" library="Appium_resource">
+<kw name="Get Element Attribute" library="AppiumLibrary">
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<arguments>
+<arg>//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]</arg>
+<arg>text</arg>
+</arguments>
+<assign>
+<var>${currentTime}</var>
+</assign>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 19:05:14.736" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 19:05:12.963" endtime="20200423 19:05:14.737"></status>
+</kw>
+<msg timestamp="20200423 19:05:14.744" level="FAIL">ValueError: Element locator '//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]' did not match any elements.</msg>
+<status status="FAIL" starttime="20200423 19:05:12.553" endtime="20200423 19:05:14.744"></status>
+</kw>
+<status status="FAIL" starttime="20200423 19:05:12.552" endtime="20200423 19:05:14.744"></status>
+</kw>
+<msg timestamp="20200423 19:05:14.744" level="FAIL">Keyword 'check video is playing' failed after retrying 3 times. The last error was: ValueError: Element locator '//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]' did not match any elements.</msg>
+<status status="FAIL" starttime="20200423 19:05:02.321" endtime="20200423 19:05:14.745"></status>
+</kw>
+<status status="FAIL" starttime="20200423 19:04:20.026" endtime="20200423 19:05:14.745"></status>
+</kw>
+<tags>
+<tag>Android</tag>
+</tags>
+<status status="FAIL" starttime="20200423 19:04:20.025" endtime="20200423 19:05:14.745" critical="yes">Keyword 'check video is playing' failed after retrying 3 times. The last error was: ValueError: Element locator '//android.widget.TextView[contains(@resource-id,'time_bar_current_time')]' did not match any elements.</status>
+</test>
+<status status="FAIL" starttime="20200423 19:04:16.779" endtime="20200423 19:05:14.746"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Android</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Driver Appium Trial">Driver Appium Trial</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

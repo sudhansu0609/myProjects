@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.5 on win32)" generated="20200423 18:01:34.258" rpa="false">
+<suite id="s1" name="Driver Appium Trial" source="C:\robot_framework\HeadSpinAppiumPOC\TestSuite\Driver_Appium_Trial.robot">
+<test id="s1-t1" name="Headspin testing of youtube">
+<kw name="test youtube on headspin" library="Appium_resource">
+<arguments>
+<arg>${DeviceArg}</arg>
+</arguments>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${capability_File_Youtube_${Device}}</arg>
+</arguments>
+<assign>
+<var>${capabilities_temp}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.753" level="INFO" html="yes">Getting file '&lt;a href="file://C:\robot_framework\HeadSpinAppiumPOC\Assets\capabilityYoutubeHeadspinSONY.json"&gt;C:\robot_framework\HeadSpinAppiumPOC\Assets\capabilityYoutubeHeadspinSONY.json&lt;/a&gt;'.</msg>
+<msg timestamp="20200423 18:01:37.755" level="INFO">${capabilities_temp} = {
+    "deviceName": "CQ3001SM53",
+    "autoAcceptAlerts": "true",
+    "udid": "CQ3001SM53",
+    "appPackage": "com.android.settings",
+    "automationName": "UiAutomator1",
+    "platformName": "Android...</msg>
+<status status="PASS" starttime="20200423 18:01:37.752" endtime="20200423 18:01:37.755"></status>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<doc>Convert String to JSON object</doc>
+<arguments>
+<arg>${capabilities_temp}</arg>
+</arguments>
+<assign>
+<var>${capabilitiesFinal}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.756" level="INFO">${capabilitiesFinal} = {'deviceName': 'CQ3001SM53', 'autoAcceptAlerts': 'true', 'udid': 'CQ3001SM53', 'appPackage': 'com.android.settings', 'automationName': 'UiAutomator1', 'platformName': 'Android', 'appActivity': 'com.an...</msg>
+<status status="PASS" starttime="20200423 18:01:37.755" endtime="20200423 18:01:37.756"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[deviceName]</arg>
+</arguments>
+<assign>
+<var>${deviceName}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.756" level="INFO">${deviceName} = CQ3001SM53</msg>
+<status status="PASS" starttime="20200423 18:01:37.756" endtime="20200423 18:01:37.756"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[platformName]</arg>
+</arguments>
+<assign>
+<var>${platformName}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.757" level="INFO">${platformName} = Android</msg>
+<status status="PASS" starttime="20200423 18:01:37.757" endtime="20200423 18:01:37.757"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[appPackage]</arg>
+</arguments>
+<assign>
+<var>${appPackage}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.758" level="INFO">${appPackage} = com.android.settings</msg>
+<status status="PASS" starttime="20200423 18:01:37.757" endtime="20200423 18:01:37.758"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[automationName]</arg>
+</arguments>
+<assign>
+<var>${automationName}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.758" level="INFO">${automationName} = UiAutomator1</msg>
+<status status="PASS" starttime="20200423 18:01:37.758" endtime="20200423 18:01:37.758"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[appActivity]</arg>
+</arguments>
+<assign>
+<var>${appActivity}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.758" level="INFO">${appActivity} = com.android.settings.Settings</msg>
+<status status="PASS" starttime="20200423 18:01:37.758" endtime="20200423 18:01:37.758"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${capabilitiesFinal}[udid]</arg>
+</arguments>
+<assign>
+<var>${udid}</var>
+</assign>
+<msg timestamp="20200423 18:01:37.760" level="INFO">${udid} = CQ3001SM53</msg>
+<status status="PASS" starttime="20200423 18:01:37.759" endtime="20200423 18:01:37.760"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${headspinUrl${Device}}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>automationName=${automationName}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>udid=${udid}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 18:01:37.760" endtime="20200423 18:01:47.391"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200423 18:01:49.391" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200423 18:01:47.391" endtime="20200423 18:01:49.391"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//android.widget.TextView[contains(@text,'No Thanks')]</arg>
+<arg>2s</arg>
+</arguments>
+<assign>
+<var>${CheckPremium1}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.TextView[contains(@text,'No Thanks')]</arg>
+<arg>2s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 18:02:06.910" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 18:01:52.064" endtime="20200423 18:02:06.910"></status>
+</kw>
+<msg timestamp="20200423 18:02:06.912" level="FAIL">Element locator 'xpath=//android.widget.TextView[contains(@text,'No Thanks')]' did not match any elements after 2 seconds</msg>
+<status status="FAIL" starttime="20200423 18:01:49.392" endtime="20200423 18:02:06.913"></status>
+</kw>
+<msg timestamp="20200423 18:02:06.913" level="INFO">${CheckPremium1} = False</msg>
+<status status="PASS" starttime="20200423 18:01:49.391" endtime="20200423 18:02:06.913"></status>
+</kw>
+<kw name="Run Keyword And Return If" library="BuiltIn">
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>'${CheckPremium1} '=='True'</arg>
+<arg>Click Element</arg>
+<arg>xpath=xpath=//*[contains(@text,'No Thanks')]</arg>
+</arguments>
+<status status="PASS" starttime="20200423 18:02:06.913" endtime="20200423 18:02:06.914"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=Search</arg>
+</arguments>
+<msg timestamp="20200423 18:02:06.918" level="INFO">Clicking element 'accessibility_id=Search'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200423 18:02:23.742" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 18:02:08.791" endtime="20200423 18:02:23.743"></status>
+</kw>
+<msg timestamp="20200423 18:02:23.748" level="FAIL">ValueError: Element locator 'accessibility_id=Search' did not match any elements.</msg>
+<status status="FAIL" starttime="20200423 18:02:06.915" endtime="20200423 18:02:23.748"></status>
+</kw>
+<status status="FAIL" starttime="20200423 18:01:37.751" endtime="20200423 18:02:23.748"></status>
+</kw>
+<tags>
+<tag>Android</tag>
+</tags>
+<status status="FAIL" starttime="20200423 18:01:37.750" endtime="20200423 18:02:23.749" critical="yes">ValueError: Element locator 'accessibility_id=Search' did not match any elements.</status>
+</test>
+<status status="FAIL" starttime="20200423 18:01:34.270" endtime="20200423 18:02:23.749"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Android</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Driver Appium Trial">Driver Appium Trial</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projectConfiguration>
+    <configVersion>2</configVersion>
+    <robotExecEnvironment path="C:/Python37-64" interpreter="Python"/>
+    <relativeTo>PROJECT</relativeTo>
+    <referencedLibrary type="PYTHON" name="AppiumLibrary" path="HeadSpinAppiumPOC/Libraries/AppiumLibrary/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="HeadSpinAppiumPOC/Libraries/SeleniumLibrary/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="JSONLibrary" path="HeadSpinAppiumPOC/Libraries/JSONLibrary/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="pabot" path="HeadSpinAppiumPOC/Libraries/pabot/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="pabot.pabotlib" path="HeadSpinAppiumPOC/Libraries/pabot/pabotlib.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="headspinPythonLib" path="HeadSpinAppiumPOC/Libraries/headspinPythonLib.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="DynamicXpath" path="HeadSpinAppiumPOC/Libraries/DynamicXpath.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="testLib" path="HeadSpinAppiumPOC/Libraries/myLibraries/testLib.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="pyperclip" path="C:/Python37-64/Lib/site-packages/pyperclip/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="restartModule" path="HeadSpinAppiumPOC/Libraries/myLibraries/restartModule.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="ScreenCapLibrary" path="C:/Python37-64/Lib/site-packages/ScreenCapLibrary/__init__.py" dynamic="false"/>
+    <pythonpath/>
+    <classpath/>
+    <excludedForValidation/>
+    <isValidatedFileSizeCheckingEnabled>true</isValidatedFileSizeCheckingEnabled>
+    <validatedFileMaxSize>1024</validatedFileMaxSize>
+</projectConfiguration>

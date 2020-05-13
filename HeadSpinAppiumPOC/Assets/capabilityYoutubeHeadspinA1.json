@@ -1,0 +1,10 @@
+{
+    "deviceName": "33874a380704",
+    "autoAcceptAlerts": "true",
+    "udid": "33874a380704",
+    "appPackage": "com.google.android.youtube",
+    "automationName": "UiAutomator1",
+    "platformName": "Android",
+    "appActivity": "com.google.android.apps.youtube.app.application.Shell$HomeActivity",
+    "headspin.controlLock": "true"
+}

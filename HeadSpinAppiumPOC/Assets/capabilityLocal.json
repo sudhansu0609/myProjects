@@ -1,0 +1,10 @@
+{
+    "deviceName": "emulator-5554",
+    "autoAcceptAlerts": "true",
+    "udid": "emulator-5554",
+    "appPackage": "com.google.android.youtube",
+    "automationName": "UiAutomator1",
+    "platformName": "Android",
+    "fullReset":"true",
+    "appActivity": "com.google.android.apps.youtube.app.application.Shell$HomeActivity"
+}

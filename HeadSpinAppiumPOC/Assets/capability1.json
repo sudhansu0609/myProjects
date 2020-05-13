@@ -1,0 +1,10 @@
+{
+    "deviceName": "4cb02cfb",
+    "autoAcceptAlerts": "true",
+    "udid": "4cb02cfb",
+    "appPackage": "com.android.settings",
+    "automationName": "UiAutomator2",
+    "platformName": "Android",
+    "appActivity": "com.android.settings.Settings",
+    "headspin.controlLock": "true"
+}
